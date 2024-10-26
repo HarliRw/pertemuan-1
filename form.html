@@ -4,64 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Halaman Tambah Mahasiswa</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f9f9f9;
-        margin: 0;
-        padding: 20px;
-      }
-
-      h2 {
-        text-align: center;
-        color: #333;
-      }
-
-      form {
-        width: 40%;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-      }
-
-      input[type='text'],
-      select {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-
-      button {
-        width: 100%;
-        padding: 10px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link rel="stylesheet" href="form.css" />
   </head>
   <body>
     <h2>Tambah Mahasiswa</h2>
+    <div class="clock" id="clock"></div>
 
-    <form action="/submit-mahasiswa" method="POST">
+    <form id="formContainer">
       <label for="nama">Nama:</label>
-      <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required />
+      <input type="text" id="nama" name="nama" placeholder="Masukkan nama" required oninput="this.value = this.value.toUpperCase()" />
 
       <label for="nim">NIM:</label>
       <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" required />
@@ -73,7 +24,10 @@
         <option value="Perempuan">Perempuan</option>
       </select>
 
-      <button type="submit">Submit</button>
+      <button type="button" id="addFormButton">Tambah Form Baru</button>
+      <button type="button" id="submitButton">Submit</button>
     </form>
+
+    <script src="form.js"></script>
   </body>
 </html>
